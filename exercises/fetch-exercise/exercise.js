@@ -24,11 +24,11 @@ fetch(fetchUrl)
     if (response.ok) {
       return response.text();
     }
-    throw "error";
+    throw `error code ${response.status} url ${response.statusText}`;
   })
   .then(function (greeting) {
     const message = document.querySelector("#greeting-text");
     message.innerHTML = greeting;
+  })
 
-    throw "error";
-  });
+  .catch((err) => console.log("there was a problem getting Data", err));
