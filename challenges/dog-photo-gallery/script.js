@@ -28,7 +28,9 @@ function dogsApi() {
       ul.appendChild(li);
       li.appendChild(img);
       img.src = data.message;
-    });
+    })
+
+    .catch((err) => console.log("err", err));
 }
 
 dogsApi();
